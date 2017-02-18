@@ -9,8 +9,8 @@
 defined('IN_IA') or exit('Access Denied');
 
 require_once 'core/inc/core.php';
+require_once 'core/inc/define.php';
 require_once 'core/inc/user.php';
-
 
 class Yc_shopModuleSite extends Core {
 
@@ -20,6 +20,10 @@ class Yc_shopModuleSite extends Core {
 	}
 
     public function doMobileIndex() {
+        //这个操作被定义用来呈现 功能封面.
+        $this->_exec(__FUNCTION__,false);
+    }
+    public function doMobiletest() {
         //这个操作被定义用来呈现 功能封面.
         $this->_exec(__FUNCTION__,false);
     }
