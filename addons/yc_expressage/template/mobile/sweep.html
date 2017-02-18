@@ -1,0 +1,74 @@
+{template 'common/_mobile'}
+
+<div class="panel panel-default title">
+    <div class="panel-body">
+        扫一扫查快递
+    </div>
+</div>
+
+
+<div id="show">
+    <span class="label label-primary" id="ShipperName">快递名称:</span>
+    <span class="label label-primary" id="id">快递单号:</span>
+    <span class="label label-success" id="State">订单状态:</span>
+    <ul class="list-group" id="group">
+
+    </ul>
+</div>
+
+<script>
+
+    $("#show").hide();
+
+
+    wx.ready(function() {
+        wx.scanQRCode({
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+                window.result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                show();
+            }
+        });
+    });
+
+    function show() {
+        var url = "{php echo $this->createMobileUrl('git')}";
+        $.ajax({
+                type: "POST",
+                url: url,
+                async: false,
+                dataType: 'json',
+                data: {code:result},
+                success: function(res){
+                    //判断状态
+
+                    if (res.status > 0){
+                        $("#show").show();
+                        $("#ShipperName").append(res.kname);
+                        $("#id").append(res.kid);
+                        $("#State").append(res.state);
+                        //AcceptStation
+                        //AcceptTime
+                        for (var i=0; i<res.Traces.length; i++)
+                        {
+                            var res_time = res.Traces[i]['AcceptTime'];
+                            var res_text = res.Traces[i]['AcceptStation'];
+                            $("#group").append("<li class='list-group-item list-group-item-defult'>"+res_time+"</li>");
+                            $("#group").append("<li class='list-group-item list-group-item-success' style='padding-left: 30px;'>"+res_text+"</li>");
+                        }
+                    }
+                    else{
+                        alert(res.mag);
+                    }
+                },
+                error : function() {
+                    alert("数据异常");
+                }
+
+            }
+        );
+
+    }
+</script>
+{template 'common/_footer'}

@@ -1,0 +1,18 @@
+{template 'common/header'}
+
+<div class="panel-heading">
+    <h3 class="panel-title" style="text-align: center">快递信息</h3>
+</div>
+
+<span class="label label-primary">快递名称:{$nameShow}</span>
+<span class="label label-primary">快递单号:{$id}</span>
+<span class="label label-success">订单状态:{$goGit['State']}</span>
+<ul class="list-group">
+
+    {loop $goGit['Traces'] $i $g}
+    <li class="list-group-item list-group-item-defult">{$g['AcceptTime']}</li>
+    <li class="list-group-item list-group-item-success" style="padding-left: 30px;">{$g['AcceptStation']}</li>
+    {/loop}
+</ul>
+<button type="button" class="btn btn-default" ><a href="{php echo $this->createWebUrl('show1')}" >返回首页</a></button>
+{template 'common/footer'}

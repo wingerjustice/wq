@@ -1,0 +1,20 @@
+{template 'common/_mobile'}
+
+<div class="panel panel-default title">
+    <div class="panel-body">
+        快递查询
+    </div>
+</div>
+
+<form class="form-horizontal" action="" method="post">
+    <input class="form-control" style="width: 86%; margin-left: 7%; border-radius: 8px;" type="text" name="kid" placeholder="请输入您的快递单号">
+    <div class="form-group" style="margin-right: 0;">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" style="width: 90%;margin-top: 6px; margin-left: 5%;" class="btn btn-default" name="check" value="提交"  />
+            <!--使用全局变量前要 获取全局变量-->
+            <input type="hidden" name="token" value="{$_W['token']}" />
+        </div>
+    </div>
+</form>
+
+{template 'common/_footer'}

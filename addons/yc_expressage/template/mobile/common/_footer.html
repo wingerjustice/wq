@@ -1,0 +1,46 @@
+<footer class="footer container-fluid">
+    <ul class="nav row nav-pills navbar-fixed-bottom navbar-inverse four-items main_bg navbar-bottom bottom">
+        <li role="presentation"><a href="{php echo $this->createMobileUrl('cover1')}"><span class="glyphicon glyphicon-search"></span><span>查快递</span></a></li>
+        <li class="leftline" role="presentation"><a href="{php echo $this->createMobileUrl('Sweep')}"><span class="glyphicon glyphicon-camera"></span><span>扫一扫</span></a></li>
+        <li class="leftline" role="presentation"><a href="{php echo $this->createMobileUrl('Member')}"><span class="glyphicon glyphicon-user "></span><span>个人中心</span></a></li>
+    </ul>
+</footer>
+
+<script type="text/javascript">
+    $(function(){
+        wx.config(jssdkconfig);
+        var $_share = {php echo json_encode($_share);};
+        if(typeof sharedata == 'undefined'){
+            sharedata = $_share;
+        } else {
+            sharedata['title'] = sharedata['title'] || $_share['title'];
+            sharedata['desc'] = sharedata['desc'] || $_share['desc'];
+            sharedata['link'] = sharedata['link'] || $_share['link'];
+            sharedata['imgUrl'] = sharedata['imgUrl'] || $_share['imgUrl'];
+        }
+        if(sharedata.imgUrl == ''){
+            var _share_img = $('body img:eq(0)').attr("src");
+            if(_share_img == ""){
+                sharedata['imgUrl'] = window.sysinfo.attachurl + 'images/global/wechat_share.png';
+            } else {
+                sharedata['imgUrl'] = util.tomedia(_share_img);
+            }
+        }
+        if(sharedata.desc == ''){
+            var _share_content = util.removeHTMLTag($('body').html());
+            if(typeof _share_content == 'string'){
+                sharedata.desc = _share_content.replace($_share['title'], '')
+            }
+        }
+        wx.ready(function () {
+            wx.onMenuShareAppMessage(sharedata);
+            wx.onMenuShareTimeline(sharedata);
+            wx.onMenuShareQQ(sharedata);
+            wx.onMenuShareWeibo(sharedata);
+        });
+
+    });
+</script>
+
+</body>
+</html>

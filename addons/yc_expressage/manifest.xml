@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://yuanxu.top" versionCode="0.6">
+	<application setting="false">
+		<name><![CDATA[yc_expressage]]></name>
+		<identifie><![CDATA[yc_expressage]]></identifie>
+		<version><![CDATA[1.1]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[yc_expressage快递查询]]></ability>
+		<description><![CDATA[yc_expressage快递查询插件]]></description>
+		<author><![CDATA[yc]]></author>
+		<url><![CDATA[http://yuanxu.top/]]></url>
+	</application>
+	<platform>
+		<subscribes>
+			<message type="text" />
+		</subscribes>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="查询快递信息" do="cover1" state="" direct="false" />
+			<entry title="扫一扫查快递" do="Sweep" state="" direct="false" />
+			<entry title="个人中心" do="Member" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="查询快递" do="show1" state="" direct="false" />
+			<entry title="添加快递api" do="api" state="" direct="false" />
+		</menu>
+	</bindings>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[uninstall.php]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

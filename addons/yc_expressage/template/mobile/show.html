@@ -1,0 +1,26 @@
+{template 'common/_mobile'}
+
+<style>
+    .list-group {
+        padding-bottom: 50px;
+    }
+</style>
+
+<div class="panel panel-default title">
+    <div class="panel-body">
+        快递信息
+    </div>
+</div>
+
+<span class="label label-primary">快递名称:{$show['kname']}</span>
+<span class="label label-primary">快递单号:{$show['kid']}</span>
+<span class="label label-success">订单状态:{$show['state']}</span>
+<ul class="list-group">
+
+    {loop $res['Traces'] $i $g}
+    <li class="list-group-item list-group-item-defult">{$g['AcceptTime']}</li>
+    <li class="list-group-item list-group-item-success" style="padding-left: 30px;">{$g['AcceptStation']}</li>
+    {/loop}
+</ul>
+
+{template 'common/_footer'}
