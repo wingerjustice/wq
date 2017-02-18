@@ -50,17 +50,10 @@ class Core extends WeModuleSite {
         return $compile;
     }
 
-    public function _exec($do,$web = 1, $default ){
+    public function _exec($do,$web = true, $default='' ){
         global $_GPC;
 
-        if ($web == 1){
-            $web = true;
-        }else{
-            $web = false;
-        }
-        if (empty($default)){
-            $default = 'index';
-        }
+        $default = empty($file) ? 'index' : $default;
 
         $do = strtolower(substr($do, $web ? 5 : 8));
         $p = trim($_GPC['p']);
