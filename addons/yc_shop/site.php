@@ -8,8 +8,8 @@
 */
 defined('IN_IA') or exit('Access Denied');
 
-require_once  'core/core.php';
-require_once  'core/user.php';
+require_once 'core/inc/core.php';
+require_once 'core/inc/user.php';
 
 
 class Yc_shopModuleSite extends Core {
