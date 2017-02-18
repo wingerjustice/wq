@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6">
+	<application setting="false">
+		<name><![CDATA[yc_shop商城]]></name>
+		<identifie><![CDATA[yc_shop]]></identifie>
+		<version><![CDATA[0.02]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[yc_shop商城,是一款商城插件]]></ability>
+		<description><![CDATA[yc_shop商城,是一款商城插件]]></description>
+		<author><![CDATA[yc]]></author>
+		<url><![CDATA[http://yuanxu.top]]></url>
+	</application>
+	<platform>
+		<subscribes>
+			<message type="text" />
+			<message type="image" />
+			<message type="voice" />
+			<message type="video" />
+			<message type="shortvideo" />
+			<message type="location" />
+			<message type="link" />
+			<message type="subscribe" />
+			<message type="unsubscribe" />
+			<message type="qr" />
+			<message type="trace" />
+			<message type="click" />
+			<message type="view" />
+			<message type="merchant_order" />
+		</subscribes>
+		<handles>
+			<message type="text" />
+			<message type="image" />
+			<message type="voice" />
+			<message type="video" />
+			<message type="shortvideo" />
+			<message type="location" />
+			<message type="link" />
+			<message type="subscribe" />
+			<message type="qr" />
+			<message type="trace" />
+			<message type="click" />
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+
+		<cover>
+			<entry title="功能封面" do="index" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="商品管理" do="index" state="" direct="false" />
+
+		</menu>
+	</bindings>
+
+	<install><![CDATA[]]></install>
+	<uninstall><![CDATA[]]></uninstall>
+	<upgrade><![CDATA[]]></upgrade>
+</manifest>
