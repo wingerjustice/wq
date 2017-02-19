@@ -7,10 +7,5 @@
 // | Author: yc <yc@yuanxu.top>
 // +----------------------------------------------------------------------
 
-if ($_GPC['about']){
-    include $this->template('index','about');
-    die();
-}
 
-# 测试手机端 框架兼容性
-include $this->template('index');
+include $this->template('test');

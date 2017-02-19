@@ -23,11 +23,13 @@ class Core extends WeModuleSite {
      * @$filename 文件夹名字
      * @$file 文件名字 不填则默认index文件
     */
-    public function template($filename,$file = ''){
+    public function template($filename){
         global $_W;
         $name = strtolower($this->modulename);
         $defineDir = dirname($this->__define);
-        $file = empty($file) ? '/index' :".'/'$file";
+
+        # 判断是否自定义路径
+        $file = strpos($filename,'/') ? '': '/index' ;
 
         if (defined('IN_SYS')) {
             #定义插件 模版目录
@@ -39,6 +41,7 @@ class Core extends WeModuleSite {
             $source = $defineDir.'/template/mobile/'.$filename.$file.'.html';
             $compile = IA_ROOT . "/data/tpl/app/{$_W['template']}/{$name}/{$filename}.tpl.php";
         }
+
         if (!is_file($source)) {
             die( "Error: template source '{$filename}' is not exist!" );
         }
@@ -69,6 +72,8 @@ class Core extends WeModuleSite {
         include $file;
         die;
     }
+
+
 
 
 

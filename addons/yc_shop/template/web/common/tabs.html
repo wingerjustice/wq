@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+    <li {if $_GPC['op'] == 'goods' || empty($_GPC['p'])} class="active" {/if}><a href="{php echo $this->createWebUrl('goods')}">商品管理</a></li>
+    <li {if $_GPC['op'] == 'category'} class="active" {/if}><a href="{php echo $this->createWebUrl('category')}">商品分类管理</a></li>
+    <li {if $_GPC['op'] == 'dispatch'} class="active" {/if}><a href="{php echo $this->createWebUrl('dispatch')}">配送方式</a></li>
+    <li {if $_GPC['op'] == 'adv'} class="active" {/if}><a href="{php echo $this->createWebUrl('adv')}">幻灯片管理</a></li>
+    <li {if $_GPC['op'] == 'notice'} class="active" {/if}><a href="{php echo $this->createWebUrl('notice')}">公告管理</a></li>
+    <li {if $_GPC['op'] == 'comment'} class="active" {/if}><a href="{php echo $this->createWebUrl('comment')}">评价管理</a></li>
+</ul>

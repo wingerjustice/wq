@@ -1,0 +1,89 @@
+<style type='text/css'>
+    .topmenu { position: relative; width:100%;float:left;background:#efefef;margin-bottom:20px;}
+    .topmenu ul li a { color:#000}
+    .topmenu .dropdown-menu li a { color:#666}
+    .topmenu ul li { content:'|'}
+</style>
+<div class='topmenu'>
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="{php echo url('home/welcome/ext',array('m'=>'ewei_shop'))}"><i class='fa fa-home'></i> {php echo $this->module['title']}</a>
+        </li>
+
+        <li class="dropdown">
+            <a href='javascript:;' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-shopping-cart'></i> 商城管理 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="{php echo $this->createWebUrl('shop/goods')}">商品管理</a></li>
+                <li><a href="{php echo $this->createWebUrl('shop/category')}">分类管理</a></li>
+                <li><a href="{php echo $this->createWebUrl('shop/dispatch')}">配送方式</a></li>
+                <li><a href="{php echo $this->createWebUrl('shop/adv')}">幻灯片管理</a></li>
+                <li><a href="{php echo $this->createWebUrl('shop/notice')}">公告管理</a></li>
+                <li><a href="{php echo $this->createWebUrl('shop/comment')}">评价管理</a></li>
+            </ul>
+        </li>
+
+
+        <li class="dropdown">
+            <a href='javascript:;' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-user'></i> 会员管理 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="{php echo $this->createWebUrl('member/list')}">会员管理</a></li>
+                <li><a href="{php echo $this->createWebUrl('member/level')}">会员等级</a></li>
+                <li><a href="{php echo $this->createWebUrl('member/group')}">会员分组</a></li>
+            </ul>
+        </li>
+
+
+        <li>
+            <a href='javascript;:' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-file-text-o'></i> 订单管理 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+
+                <li><a href="{php echo $this->createWebUrl('order', array('op' => 'display'))}">全部订单</a></li>
+                <li><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'status' => 0))}">待付款</a></li>
+                <li ><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'status' => 1))}">待发货</a></li>
+                <li ><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'status' => 2))}">待收货</a></li>
+                <li ><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'status' => 3))}">已完成</a></li>
+                <li ><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'status' => -1))}">已关闭</a></li>
+                <li ><a href="{php echo $this->createWebUrl('order', array('op' => 'display', 'refund' => 1))}">退款申请</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href='javascript:;' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-money'></i> 财务管理 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="{php echo $this->createWebUrl('finance/log',array('type'=>0))}">充值记录</a></li>
+                <li><a href="{php echo $this->createWebUrl('finance/log',array('type'=>1))}">余额提现</a></li>
+
+            </ul>
+        </li>
+
+
+        <li class="dropdown">
+            <a href='javascript:;' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-bar-chart-o '></i> 数据统计 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="{php echo $this->createWebUrl('statistics/sale')}">销售统计</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/sale_analysis')}">销售指标</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/order')}">订单统计</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/goods')}">商品销售明细</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/goods_rank')}">商品销售排行</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/goods_trans')}">商品销售转化率</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/member_cost')}">会员消费排行</a></li>
+                <li><a href="{php echo $this->createWebUrl('statistics/member_increase')}">会员增长趋势</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href='javascript:;' class="dropdown-toggle" data-toggle="dropdown"><i class='fa fa-cog'></i> 系统设置 <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'shop'))}">商城设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'follow'))}">引导及分享设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'notice'))}">模板消息设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'trade'))}">交易设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'pay'))}">支付方式</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'template'))}">模板设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'member'))}">会员设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'category'))}">分类层级设置</a></li>
+                <li><a href="{php echo $this->createWebUrl('sysset',array('op'=>'contact'))}">联系方式设置</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -18,7 +18,8 @@ define('IA_ADDONS', IA_ROOT . DS .'addons');
 define('IA_FRAMEWORK', IA_ROOT . DS .'framework');
 define('IA_Mname', IA_ADDONS . DS . $Mname);
 
-define('IA_YC_STATIC', IA_Mname.'/static');
+define('IA_YC_STATIC', $_W['siteroot'] . 'addons/'.$Mname.'/static');
+define('FRA',IA_YC_STATIC. DS.'framework7');
 define('IA_YC_STATIC_COMMON', IA_YC_STATIC . '/common');
 define('IA_YC_STATIC_CSS', IA_YC_STATIC . '/css');
 define('IA_YC_STATIC_JS', IA_YC_STATIC . '/js');
